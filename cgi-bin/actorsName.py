@@ -9,8 +9,14 @@ name = 'Ford' #only for testing
 
 conn = sqlite3.connect('imdb.db')
 cur = conn.cursor()
-sql = "SELECT Name FROM Actor WHERE Name like '%" + name + "%'"
+sql = "SELECT * FROM Actor WHERE Name like '%" + name + "%'"
 print(sql)
+data = []
 for row in cur.execute(sql):
-  print(row)
+  data.append({
+    'id': row[0],
+    'name': row[1]
+    })
 conn.close()
+print(json.dumps(data))
+
