@@ -1,11 +1,13 @@
 #!/usr/bin/python3
+#WARNING!
+#Do not forget check your own path for python3!
 import json
 import cgi
 import sqlite3
 
 form = cgi.FieldStorage() 
 name = form.getvalue('name')
-#name = 'Ford' #only for testing
+name = 'Ford' #only for testing
 
 conn = sqlite3.connect('imdb.db')
 cur = conn.cursor()
