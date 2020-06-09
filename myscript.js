@@ -1,6 +1,6 @@
 function query1(name){
   var url = 'cgi-bin/actorsName.py?name='+name;
-  console.log(ur);
+  console.log(url);
   ajax(url, render)
 }
 function render(data){
